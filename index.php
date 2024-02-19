@@ -7,7 +7,7 @@
 </head>
 
 <body>
-    <?php include 'header.php'; ?>
+    <?php include './Components/Layouts/header.html'; ?>
     <main>
         <div class="title-container">
             <h1 class="title">
@@ -16,27 +16,25 @@
             <p class="title-description">
                 学んだUMLをこのエディタで練習してみましょう。<br />練習問題には「問題一覧」からチャレンジすることが出来ます。</p>
         </div>
-        <div className="button-container flex justify-center my-4">
-            <button id="svgBtn" class="format-btn bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+        <div className="button-container">
+            <button id="svgBtn" class="format-btn">
                 svg
             </button>
-            <button id="pngBtn" class="format-btn bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            <button id="pngBtn" class="format-btn">
                 png
             </button>
-            <button id="asciiBtn"
-                class="format-btn bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            <button id="asciiBtn" class="format-btn">
                 ascii
             </button>
             <a href="#" download>
-                <button id="download"
-                    class="download-btn bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                <button id="download" class="download-btn">
                     Download
                 </button>
             </a>
         </div>
-        <div class="content flex justify-center">
-            <?php include 'editor.php'; ?>
-            <?php include 'preview.php'; ?>
+        <div class="content">
+            <?php include './Components/Editors/editor.html'; ?>
+            <?php include './Components/Previews/preview.html'; ?>
         </div>
     </main>
 </body>

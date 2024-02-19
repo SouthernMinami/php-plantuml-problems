@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
 
     $data = json_decode(file_get_contents("php://input"), true);
     $uml_code = $data["code"];
-    $format = $data["extension"];
+    $format = $data["format"];
 
     $encoded = encodep($uml_code);
 
