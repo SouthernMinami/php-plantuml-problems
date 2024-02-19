@@ -1,0 +1,107 @@
+[
+    {
+        "id": 1,
+        "title": "ライフラインの活性化",
+        "difficulty": "normal",
+        "category": "シーケンス図",
+        "answer": "@startuml\nautoactivate on\nalice -> bob : hello\nbob -> bob : self call\nbill -> bob #005500 : hello from thread 2\nbob -> george ** : create\nreturn done in thread 2\nreturn rc\nbob -> george !! : delete\nreturn success\n@enduml\n\n"
+    },
+    {
+        "id": 2,
+        "title": "ユーザー認証",
+        "difficulty": "normal",
+        "category": "シーケンス図",
+        "answer": "@startuml\n        actor User\n        participant \"Authentication Service\"\n        User -> \"Authentication Service\" : Authenticate\n        \"Authentication Service\" -> User : Authentication Result\n        @enduml"
+    },
+    {
+        "id": 3,
+        "title": "オンライン注文",
+        "difficulty": "normal",
+        "category": "シーケンス図",
+        "answer": "@startuml\n        actor Customer\n        participant \"Order System\"\n        participant \"Payment Gateway\"\n        Customer -> \"Order System\" : Place Order\n        \"Order System\" -> \"Payment Gateway\" : Process Payment\n        \"Payment Gateway\" -> \"Order System\" : Payment Confirmation\n        \"Order System\" -> Customer : Order Confirmation\n        @enduml"
+    },
+    {
+        "id": 4,
+        "title": "DBクエリ処理",
+        "difficulty": "normal",
+        "category": "シーケンス図",
+        "answer": "@startuml\n        actor User\n        database \"Database\" as DB\n        User -> DB : Query\n        DB -> User : Result\n        @enduml"
+    },
+    {
+        "id": 5,
+        "title": "注文処理のフロー",
+        "difficulty": "normal",
+        "category": "アクティビティ図",
+        "answer": "@startuml\n        start\n        :Receive Order;\n        if (Payment Received?) then (yes)\n          :Process Order;\n          :Ship Order;\n        else (no)\n          :Request Payment;\n        endif\n        stop\n        @enduml"
+    },
+    {
+        "id": 6,
+        "title": "新規アカウント作成",
+        "difficulty": "normal",
+        "category": "アクティビティ図",
+        "answer": "@startuml\n        start\n        :Enter Details;\n        :Validate Information;\n        if (Valid?) then (yes)\n          :Create Account;\n          :Send Confirmation Email;\n        else (no)\n          :Display Error;\n        endif\n        stop\n        @enduml"
+    },
+    {
+        "id": 7,
+        "title": "注文の状態遷移",
+        "difficulty": "normal",
+        "category": "状態図",
+        "answer": "@startuml\n        [*] --> New\n        New --> Processing : Order Placed\n        Processing --> Shipped : Ready to Ship\n        Shipped --> Delivered : Deliver Order\n        Delivered --> [*]\n        @enduml"
+    },
+    {
+        "id": 8,
+        "title": "ログイン状態",
+        "difficulty": "normal",
+        "category": "状態図",
+        "answer": "@startuml\n        [*] --> LoggedOut\n        LoggedOut --> LoggedIn : Successful Login\n        LoggedIn --> LoggedOut : Logout\n        LoggedIn : Perform User Actions\n        @enduml"
+    },
+    {
+        "id": 9,
+        "title": "基本的なWebアプリ構成",
+        "difficulty": "normal",
+        "category": "デプロイメント図",
+        "answer": "@startuml\n        node \"Web Server\"\n        node \"App Server\"\n        node \"Database Server\"\n        \"Web Server\" --> \"App Server\" : forwards\n        \"App Server\" ..> \"Database Server\" : uses\n        @enduml"
+    },
+    {
+        "id": 10,
+        "title": "分散システム構成",
+        "difficulty": "normal",
+        "category": "デプロイメント図",
+        "answer": "@startuml\n        node \"Load Balancer\"\n        node \"App Server 1\"\n        node \"App Server 2\"\n        node \"Database Server\"\n        \"Load Balancer\" --> \"App Server 1\" : directs\n        \"Load Balancer\" --> \"App Server 2\" : directs\n        \"App Server 1\" ..> \"Database Server\" : uses\n        \"App Server 2\" ..> \"Database Server\" : uses\n        @enduml"
+    },
+    {
+        "id": 11,
+        "title": "プロジェクトスケジュール",
+        "difficulty": "normal",
+        "category": "ガントチャート",
+        "answer": "@startgantt\n        [Task1] lasts 5 days\n        [Task2] lasts 10 days\n        [Task2] starts at [Task1]'s end\n        @endgantt"
+    },
+    {
+        "id": 12,
+        "title": "タスクと依存関係",
+        "difficulty": "normal",
+        "category": "ガントチャート",
+        "answer": "@@startgantt\n        Project starts the 2021/01/01\n        [Task1] lasts 5 days\n        [Task2] lasts 10 days\n        [Task2] starts 5 days after [Task1]'s end\n        @endgantt"
+    },
+    {
+        "id": 13,
+        "title": "開発計画",
+        "difficulty": "normal",
+        "category": "マインドマップ",
+        "answer": "@startmindmap\n        * Project\n        ** Timeline\n        ** Budget\n        ** Resources\n        *** Human\n        *** Material\n        ** Risks\n        @endmindmap"
+    },
+    {
+        "id": 14,
+        "title": "プロジェクトのリスク",
+        "difficulty": "normal",
+        "category": "マインドマップ",
+        "answer": "@startmindmap\n        * Project\n        ** Risks\n        *** Technical\n        *** Financial\n        *** Legal\n        *** Operational\n        @endmindmap"
+    },
+    {
+        "id": 15,
+        "title": "プロジェクトのリソース",
+        "difficulty": "normal",
+        "category": "マインドマップ",
+        "answer": "@startmindmap\n        * Project\n        ** Resources\n        *** Human\n        *** Material\n        *** Financial\n        @endmindmap"
+    }
+]

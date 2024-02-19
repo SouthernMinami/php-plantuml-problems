@@ -1,0 +1,170 @@
+[
+    {
+        "id": 1,
+        "name": "クラス図",
+        "summary": "クラス図は、クラス同士の関係を表すために用いられる構成図です。\n特にオブジェクト指向開発の設計において、クラス図は非常に重要な図となります。",
+        "descriptions": [
+            {
+                "id": 1,
+                "title": "クラス図の基本構文",
+                "content": "・@startumlと@endumlで囲みます\n・クラス名 + 関係を表す記号 + クラス名で、クラスの関係を記述できます。\n・<|--(継承)、<..(実装)、--(関連)、o--(集約)、*--(多重度)、-->(関連)、--o(集約)、--*(多重度)、--(依存)\n・一般的なプログラミング言語のように、フィールドやメソッドを波括弧{}でくくることも出来ます。"
+            }
+        ],
+        "sampleCodes": [
+            {
+                "id": 1,
+                "code": "@startuml\nclass A {\n  String name;\n  void sayHello();\n}\n\nclass Wallet {\n  int balance;\n}\n\nA -->  Wallet : has\n@enduml"
+            }
+        ],
+        "sampleImages": [
+            {
+                "id": 1,
+                "url": "https://www.plantuml.com/plantuml/png/SoWkIImgAStDuKhEIImkLd1KgEPIK0WkAShCIrV8IynD1VBAyZDJ58eJAprIStBoDJIvQhcWYiCJSt9IIy0wClDA598ISnBpabD1yeuAkhfs2Z05LWePYSLS3gbvAI2B0000"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": "シーケンス図",
+        "summary": "シーケンス図は、オブジェクト間のやり取りを時系列に沿って表現するために用いられる図です。",
+        "descriptions": [
+            {
+                "id": 1,
+                "title": "シーケンス図の基本構文",
+                "content": "・@startumlと@endumlで囲みます\n・actorで情報の送信者、participantで受信者を図示できます。\n・->でメッセージ送信、<-でメッセージ受信を表します。\n"
+            }
+        ],
+        "sampleCodes": [
+            {
+                "id": 1,
+                "code": "@startuml\nactor User\nparticipant \"Credit Card Processor\" as CCP\nUser -> CCP : Authorize\nCCP -> User : Response\n@enduml"
+            }
+        ],
+        "sampleImages": [
+            {
+                "id": 1,
+                "url": "http://www.plantuml.com/plantuml/png/5Sr12W8n30NGVKxncRqNS24ZlS0WU83G1YneKvBCnjDFiqlU__1t3xOuVr_Y6cfuknZDHRtsoIEm5PFM0uMjuJ2jugwsWHsb79Hzt1vvuuxd6H-r_XTQVtB6or_YKuSBxJ9QZbq0"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "name": "アクティビティ図",
+        "summary": "アクティビティ図は、プロセスのフローや操作の順序を表すために用いられる図です。",
+        "descriptions": [
+            {
+                "id": 1,
+                "title": "アクティビティ図の基本構文",
+                "content": "・@startumlと@endumlで囲みます\n・処理の始まり（●）はstart、停止（◎）はstopで表せます。\n・基本は:のあとに名前を書いて処理名を表し、ifなどの条件文を先頭につけることで分岐なども表せます。"
+            }
+        ],
+        "sampleCodes": [
+            {
+                "id": 1,
+                "code": "@startuml\nstart\n:Prepare;\nif (\"Enough Ingredients?\") then (yes)\n  :Cook;\nelse (no)\n  :Shop;\nendif\n:Serve;\nstop\n@enduml"
+            }
+        ],
+        "sampleImages": [
+            {
+                "id": 1,
+                "url": "http://www.plantuml.com/plantuml/png/7Sqn2iCm34RXNQSGcPmhs4C3fKEtGauGo9_OD9MCfHHw-vfiZszva_dI_FmST0N5LqDT6XALZSFm43ttp4_P6zO2SRiD8tk6SFZ1HcAETzLt8Xm63g8NpLbh9rdBHd56-oAHkLQQklNP7m00"
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "name": "状態図",
+        "summary": "状態図は、システムやオブジェクトの状態変化とその遷移を表すために用いられる図です。",
+        "descriptions": [
+            {
+                "id": 1,
+                "title": "状態図の基本構文",
+                "content": "・@startumlと@endumlで囲みます\n・状態を記述し、状態間の遷移を矢印で表します。\n・イベントに応じて遷移する条件を記述することができます。"
+            }
+        ],
+        "sampleCodes": [
+            {
+                "id": 1,
+                "code": "@startuml\n[*] --> NotLoggedIn\nNotLoggedIn --> LoggedIn : Login\nLoggedIn --> NotLoggedIn : Logout\nLoggedIn : do/Transaction()\n@enduml"
+            }
+        ],
+        "sampleImages": [
+            {
+                "id": 1,
+                "url": "http://www.plantuml.com/plantuml/png/SoWkIImgAStDuOhMYbNGrRLJyCilySbFJqzDySpZGcA3vU0SAn0pCuyB8OlGYL2GNrh2XIIIagyVKfIOLvoON9APdwUXoUMGcfS2j1e0"
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "name": "マインドマップ",
+        "summary": "マインドマップは、アイデアや概念を放射状に配置して視覚化するために用いられる図です。",
+        "descriptions": [
+            {
+                "id": 1,
+                "title": "マインドマップの作成方法",
+                "content": "・@startmindmapと@endmindmapで囲みます\n・*で起点となる階層を表し、*の数が多いほど要素の階層は下になります。"
+            }
+        ],
+        "sampleCodes": [
+            {
+                "id": 1,
+                "code": "@startmindmap\n* Debian\n** Ubuntu\n*** Linux Mint\n*** Kubuntu\n*** Lubuntu\n*** KDE Neon\n** LMDE\n** SolydXK\n** SteamOS\n** Raspbian with a very long name\n*** <s>Raspmbc</s> => OSMC\n*** <s>Raspyfi</s> => Volumio\n@endmindmap\n"
+            }
+        ],
+        "sampleImages": [
+            {
+                "id": 1,
+                "url": "https://www.plantuml.com/plantuml/png/JOzD3e8m44Rtd6BMtNW192IM5I29HEDsAbKdeLD2MvNRInjDMCsRlFd9LpgFipV4Wy4f4o2r8kHC23Yhm3wi9A0X3XzeYNrgwx1H6wvb1KTjqtRJoYhMtexBSAqJUescwoEUq4tn3xp9Fm7XfUS5HiiFO3Gw7SjT4QUCkkKxLy2-WAvl3rkrtEclBdOCXcnMwZN7ByiN"
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "name": "ガントチャート",
+        "summary": "ガントチャートは、プロジェクトのスケジュール管理を視覚化するために用いられる図です。",
+        "descriptions": [
+            {
+                "id": 1,
+                "title": "ガントチャートの基本構文",
+                "content": "・@startganttと@endganttで囲みます\n・[タスク名] requires [日数]でタスクを記述し、複数のタスクを記述することでガントチャートを作成できます。"
+            }
+        ],
+        "sampleCodes": [
+            {
+                "id": 1,
+                "code": "@startgantt\n[Prototype design] requires 15 days\n[Test prototype] requires 10 days\n-- All example --\n[Task 1 (1 day)] requires 1 day\n[T2 (5 days)] requires 5 days\n[T3 (1 week)] requires 1 week\n[T4 (1 week and 4 days)] requires 1 week and 4 days\n[T5 (2 weeks)] requires 2 weeks\n@endgantt"
+            }
+        ],
+        "sampleImages": [
+            {
+                "id": 1,
+                "url": "https://www.plantuml.com/plantuml/png/PP2n3e8m54NtViKTwz1447Ry0mStuj2aBuHG2xRFA7zlQyL0MEyvvpLf4rXxxhHZ5kt5ZppoF14CXRvpDtXwF7jF0KKDe-SWsYi5nhI8Q-EO3QLmjXRqrlV94fIAZGu32iWY6OTrauR8IyXyVmt_BvvI-I8QjcbQ8gqM2kqCgjsP7OnD3Lb-vutvcqH3pkGV-G00"
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "name": "デプロイメント図",
+        "summary": "デプロイメント図は、システムの物理的な構成要素とその配置を表すために用いられる図です。",
+        "descriptions": [
+            {
+                "id": 1,
+                "title": "デプロイメント図の基本構文",
+                "content": "・@startumlと@endumlで囲みます\n・以下のようにノードやアーティファクトを記述することで、システムの物理的な構成を視覚化できます。"
+            }
+        ],
+        "sampleCodes": [
+            {
+                "id": 1,
+                "code": "@startuml\nactor アクター\nactor/ \"アクター/\"\nagent エージェント\nartifact アーティファクト\nboundary 境界\ncard カード\ncircle 円\ncloud クラウド\ncollections コレクション\ncomponent コンポーネント\ncontrol コントロール\ndatabase データベース\nentity エンティティ\nfile ファイル\nfolder フォルダ\nframe フレーム\nhexagon 六角形\ninterface インターフェイス\nlabel ラベル\nnode ノード\npackage パッケージ\nperson 人型\nqueue キュー\nrectangle 四角形\nstack スタック\nstorage ストレージ\nusecase ユースケース\nusecase/ \"ユースケース/\"\n@enduml"
+            }
+        ],
+        "sampleImages": [
+            {
+                "id": 1,
+                "url": "https://www.plantuml.com/plantuml/png/PLBRIWCn47tFLop-G7_1NqcpQLrCavhDWdsJ16l52oZu8A9erLQf8j87RL7yc77Hpt0cQKNmfMpFd3bpvcHMIyUjgpgASU6CpS0FmJ-1_u3mbg16jl8NRAmmtfRQ8VCE_u9_1J-6C8KmOAXKjB0fgc0jzC5VGpW1VqNzo6YQIkVSzh9w6BvEzfdWDaVs9B9tcIYiK3Ah-tqcbAceX6ttu4UnQfIImXL6brZ0YG_HrGi4Ce3bJjVeP6qQ7Pr7sOE5Es6qiqRzLWSG7YDXmdBkU9ENCeEm4vV2JK_ZnuoXOE5wQTtfSYNwPQr2KKTQxuPqMaRbqYRi7W48MwnbUIVHq2-DksHhSfEtZSxgxSVlyN7zFcI5Tj9YT4WafMdAEkgC2K4VYZSbciSqoDg4QPEJxE4YkYuNw_WmY1n12E2Vq-EmhhGbZlgSp-kBFRPHoOfcuEAtzC8My-IwJPcVdIsyu4M8TUJCeWcKUaB8s2YE8ENsi12lIYbIRAEKrdBkR5cYw_bNn1jQbJgdg_i1"
+            }
+        ]
+    }
+]

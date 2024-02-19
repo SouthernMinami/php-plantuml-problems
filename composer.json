@@ -1,0 +1,5 @@
+{
+    "require": {
+        "jawira/plantuml-encoding": "^1.1"
+    }
+}
