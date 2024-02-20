@@ -10,27 +10,14 @@
     <?php include './Components/Layouts/header.html'; ?>
     <main>
         <div class="title-container">
-            <h1 class="title">
+            <h1 class="page-title">
                 Playground
             </h1>
-            <p class="title-description">
-                学んだUMLをこのエディタで練習してみましょう。<br />練習問題には「問題一覧」からチャレンジすることが出来ます。</p>
+            <p class="page-description">
+                このサイトでは、開発に関する様々な図を作れるUMLを練習することが出来ます。<br />出力結果を確認しながらコーディングの練習をしてみましょう。<br />練習問題には「問題一覧」からチャレンジすることが出来ます。
+            </p>
         </div>
-        <div className="button-container">
-            <button id="svgBtn" class="format-btn">
-                svg
-            </button>
-            <button id="pngBtn" class="format-btn">
-                png
-            </button>
-            <button id="asciiBtn" class="format-btn">
-                ascii
-            </button>
-            <a href="#" download>
-                <button id="download" class="download-btn">
-                    Download
-                </button>
-            </a>
+        <div id="buttons-container" class="buttons-container">
         </div>
         <div class="content">
             <?php include './Components/Editors/editor.html'; ?>
