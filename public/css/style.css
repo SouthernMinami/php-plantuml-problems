@@ -154,11 +154,6 @@ a {
 
 .table-row {
     display: flex;
-    transition: all 0.3s ease;
-}
-
-.table-row :hover {
-    background: #d6d4d4;
 }
 
 .td {
@@ -204,24 +199,5 @@ a {
 .pagination-btn:hover {
     background: #1bcdd380;
     padding: 12px 22px;
-    color: #ffffff6c;
+    color: #1b1a1a6c;
 }
-
-
-/* <div className="pagination px-2 py-10">
-                {Array.from(Array(Math.ceil(problems.length / problemsPerPage)).keys()).map(number => {
-
-                    const isEdgeBtn = number === 0 || number === Math.ceil(problems.length / problemsPerPage) - 1 ? true : false
-                    const rounded = number === 0 ? 'rounded-l' : number === Math.ceil(problems.length / problemsPerPage) - 1 ? 'rounded-r' : ''
-                    const isCurrentPage = number + 1 === currentPage ? true : false
-                    const bgColor = isCurrentPage ? 'bg-blue-500' : 'bg-gray-500'
-
-                    return (
-                        <button id="pagination-btn" key={number} className={`pagination-btn px-3 py-1 ${bgColor} text-white border border-gray ${isEdgeBtn ? rounded : ''}`}>
-                            {number + 1}
-                        </button>
-
-                    )
-                })}
-            </div> */
-/* <PaginationButton problems={problems} currentPage={currentPage} setCurrentPage={setCurrentPage} /> */

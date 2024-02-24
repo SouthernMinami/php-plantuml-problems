@@ -78,7 +78,6 @@ const renderPreview = async (code) => {
     const data = await res.text()
     const previewImage = document.getElementById('preview-img')
 
-
     if (currFormat === "txt") {
         const ascii = await getAscii(data)
         console.log(ascii)
@@ -86,6 +85,49 @@ const renderPreview = async (code) => {
         previewImage.innerHTML = `<pre>${ascii}</pre>`
     } else previewImage.src = data
 }
+
+// const renderSampleImage = (value: string): void => {
+//         const reqJSON = {
+//             "code": value,
+//             "extension": "png"
+//         }
+
+//         // fetch from /backend/api.php
+//         fetch('http://localhost:8003/api.php', {
+//             method: 'POST',
+//             body: JSON.stringify(reqJSON),
+//             headers: {
+//                 'Content-Type': 'text/plain'
+//             },
+
+//         })
+//             .then(response => response.text())
+//             .then(data => {
+//                 const sampleImage = document.getElementById('sample-img') as HTMLImageElement
+//                 sampleImage.src = data
+//             })
+//             .catch(error => console.error(error))
+//     }
+
+
+//     useEffect(() => {
+//         if (problemId) {
+//             const xhr = new XMLHttpRequest()
+//             xhr.open('GET', '../problems.json', true)
+//             xhr.onload = () => {
+//                 if (xhr.status === 200) {
+//                     const res = JSON.parse(xhr.responseText)
+//                     const problems: Problem[] = res
+//                     setProblem(problems.find(problem => problem.id === Number(problemId)))
+//                 } else {
+//                     console.error('問題データの取得に失敗しました。')
+//                 }
+//             }
+//             xhr.send()
+//         }
+//     }, [problemId])
+
+//     renderSampleImage(problem?.answer!)
 
 const getAscii = async (url) => {
     try {

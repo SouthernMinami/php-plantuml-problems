@@ -14,8 +14,7 @@ $currentPage = isset($_GET['page']) ? $_GET['page'] : 1;
 $indexOfLastProblem = $currentPage * PROBLEMS_PER_PAGE;
 $indexOfFirstProblem = $indexOfLastProblem - PROBLEMS_PER_PAGE;
 
-// $currentProblems = array_slice($problems, $indexOfFirstProblem, PROBLEMS_PER_PAGE);
-$currentProblems = $problems;
+$currentProblems = array_slice($problems, $indexOfFirstProblem, PROBLEMS_PER_PAGE);
 ?>
 <!DOCTYPE html>
 <html>
@@ -65,7 +64,7 @@ $currentProblems = $problems;
         <div class="pagination">
             <?php foreach (range(1, PAGE_COUNT) as $number):
                 $is_current_page = $number == $currentPage;
-                $rounded = $number === 1 ? 'rounded-l' : ($number === PAGE_COUNT ? 'rounded-r' : '');
+                $rounded = $number == 1 ? 'rounded-l' : ($number == PAGE_COUNT ? 'rounded-r' : '');
                 $bg_color = $is_current_page ? 'bg-blue-500' : 'bg-gray-500';
 
                 echo '<a href="?page=' . $number . '" class="pagination-btn ' . $bg_color . ' ' . $rounded . '">';
@@ -75,6 +74,5 @@ $currentProblems = $problems;
         </div>
 </body>
 </main>
-
 
 </html>
