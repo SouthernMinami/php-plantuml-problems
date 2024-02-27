@@ -23,14 +23,14 @@ require(['vs/editor/editor.main'], () => {
 
     editor.onDidChangeModelContent(() => {
         currCode = editor.getValue()
-        renderPreview(currCode)
+        renderPreview('preview-img', currCode)
     })
 
     formats.forEach(format => {
         const formatBtn = formatButton(format)
         formatBtn.addEventListener('click', () => {
             currFormat = format
-            renderPreview(editor.getValue())
+            renderPreview('preview-img', editor.getValue())
         })
         buttonsContainer.append(formatBtn)
     })
@@ -61,7 +61,28 @@ const downloadButton = () => {
     return button
 }
 
-const renderPreview = async (code) => {
+const sampleCodeButton = (code) => {
+    const pre = document.getElementById('sample-code')
+    const button = document.createElement('button')
+    button.id = 'sample-code-btn'
+    button.classList.add('sample-code-btn')
+    button.innerText = 'サンプルコードを表示'
+
+    button.addEventListener('click', () => {
+        if (button.textContent === 'サンプルコードを表示') {
+            pre.innerHTML = code
+            pre.style.display = 'block'
+            button.textContent = 'サンプルコードを非表示'
+        } else {
+            pre.style.display = 'none'
+            button.textContent = 'サンプルコードを表示'
+        }
+    })
+
+    return button
+}
+
+const renderPreview = async (imgId, code) => {
     const reqJSON = {
         "code": code,
         "format": currFormat
@@ -76,58 +97,14 @@ const renderPreview = async (code) => {
     })
 
     const data = await res.text()
-    const previewImage = document.getElementById('preview-img')
+    const img = document.getElementById(imgId)
 
     if (currFormat === "txt") {
         const ascii = await getAscii(data)
-        console.log(ascii)
-        previewImage.src = ""
-        previewImage.innerHTML = `<pre>${ascii}</pre>`
-    } else previewImage.src = data
+        img.src = ""
+        img.innerHTML = `<pre>${ascii}</pre>`
+    } else img.src = data
 }
-
-// const renderSampleImage = (value: string): void => {
-//         const reqJSON = {
-//             "code": value,
-//             "extension": "png"
-//         }
-
-//         // fetch from /backend/api.php
-//         fetch('http://localhost:8003/api.php', {
-//             method: 'POST',
-//             body: JSON.stringify(reqJSON),
-//             headers: {
-//                 'Content-Type': 'text/plain'
-//             },
-
-//         })
-//             .then(response => response.text())
-//             .then(data => {
-//                 const sampleImage = document.getElementById('sample-img') as HTMLImageElement
-//                 sampleImage.src = data
-//             })
-//             .catch(error => console.error(error))
-//     }
-
-
-//     useEffect(() => {
-//         if (problemId) {
-//             const xhr = new XMLHttpRequest()
-//             xhr.open('GET', '../problems.json', true)
-//             xhr.onload = () => {
-//                 if (xhr.status === 200) {
-//                     const res = JSON.parse(xhr.responseText)
-//                     const problems: Problem[] = res
-//                     setProblem(problems.find(problem => problem.id === Number(problemId)))
-//                 } else {
-//                     console.error('問題データの取得に失敗しました。')
-//                 }
-//             }
-//             xhr.send()
-//         }
-//     }, [problemId])
-
-//     renderSampleImage(problem?.answer!)
 
 const getAscii = async (url) => {
     try {
