@@ -5,9 +5,8 @@ $problem = fetchProblem($problemId);
 function fetchProblem($id)
 {
     $problems = file_get_contents("../../public/json/problems.json");
-    return array_filter(json_decode($problems, true), function ($problem) use ($id) {
-        return $problem['id'] == $id;
-    });
+    $problemsDecoded = json_decode($problems, true);
+    return $problemsDecoded[$id - 1];
 }
 
 ?>
