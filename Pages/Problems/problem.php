@@ -49,3 +49,4 @@ function fetchProblem($id)
 
         renderPreview('sample-img', problem.answer)
     </script>
+</body>
