@@ -88,7 +88,7 @@ const renderPreview = async (imgId, code) => {
         "format": currFormat
     }
 
-    const res = await fetch('api.php', {
+    const res = await fetch('/api.php', {
         method: 'POST',
         headers: {
             'Content-Type': 'text/plain'
@@ -117,7 +117,7 @@ const getAscii = async (url) => {
 }
 const downloadImage = async (format, code) => {
     try {
-        const res = await fetch('api.php', {
+        const res = await fetch('/api.php', {
             method: 'POST',
             body: JSON.stringify({
                 "code": code,
