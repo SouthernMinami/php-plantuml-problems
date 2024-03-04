@@ -102,8 +102,16 @@ const renderPreview = async (imgId, code) => {
     if (currFormat === "txt") {
         const ascii = await getAscii(data)
         img.src = ""
-        img.innerHTML = `<pre>${ascii}</pre>`
-    } else img.src = data
+        img.style.display = "none"
+
+        const previewContainer = document.getElementById('preview')
+        const pre = document.createElement('pre')
+        pre.innerHTML = ascii
+        previewContainer.append(pre)
+    } else {
+        img.style.display = "block"
+        img.src = data
+    }
 }
 
 const getAscii = async (url) => {
