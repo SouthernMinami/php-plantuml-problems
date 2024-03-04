@@ -98,17 +98,17 @@ const renderPreview = async (imgId, code) => {
 
     const data = await res.text()
     const img = document.getElementById(imgId)
+    const asciiPre = document.getElementById('ascii')
 
     if (currFormat === "txt") {
         const ascii = await getAscii(data)
         img.src = ""
         img.style.display = "none"
 
-        const previewContainer = document.getElementById('preview')
-        const pre = document.createElement('pre')
-        pre.innerHTML = ascii
-        previewContainer.append(pre)
+        asciiPre.style.display = "block"
+        asciiPre.innerHTML = ascii
     } else {
+        asciiPre.style.display = "none"
         img.style.display = "block"
         img.src = data
     }
