@@ -58,7 +58,7 @@ UMLの基本構文を確認できるチートシートを掲載しています�
 
 ## 📜Log
 
-作業ログ: 
+[作業ログ](https://github.com/SouthernMinami/weekly-report/blob/main/logs/dynamic-web-server-log.md)
 
 ## ➡️TBA
 
