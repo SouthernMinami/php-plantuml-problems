@@ -4,6 +4,7 @@ require_once __DIR__ . "/vendor/autoload.php";
 use function Jawira\PlantUml\encodep;
 
 header("Access-Control-Allow-Methods: POST");
+header("Content-Type: application/json");
 
 if ($_SERVER['REQUEST_METHOD'] === "POST") {
     ini_set('display_errors', 1);
